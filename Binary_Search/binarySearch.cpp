@@ -48,6 +48,7 @@ int iterativeBinarySearch(const vector<int>& arr, int target, int& comparisons) 
 }
 
 
+// Recursive binary search function
 int recursiveBinarySearch(const vector<int>& arr, int target, int low, int high, int& comparisons) {
 
     if (low > high) {
@@ -71,6 +72,22 @@ int recursiveBinarySearch(const vector<int>& arr, int target, int low, int high,
     else {
         return recursiveBinarySearch(arr, target, low, mid - 1, comparisons);
     }
+}
+
+
+// Linear search function
+int linearSearch(const vector<int>& arr, int target, int& comparisons) {
+    comparisons = 0;
+
+    for (int index = 0; index < static_cast<int>(arr.size()); index++) {
+        comparisons++;
+
+        if (arr[index] == target) {
+            return index;
+        }
+    }
+
+    return -1;
 }
 
 
@@ -98,6 +115,7 @@ int main() {
         for (int target : targets) {
             int iterativeComparisons = 0;
             int recursiveComparisons = 0;
+            int linearComparisons = 0;
 
             int iterativeResult = iterativeBinarySearch(
                 arr,
@@ -113,6 +131,12 @@ int main() {
                 recursiveComparisons
             );
 
+            int linearResult = linearSearch(
+                arr,
+                target,
+                linearComparisons
+            );
+
             cout << "Target: " << target << endl;
 
             cout << "  Iterative result: index "
@@ -124,6 +148,11 @@ int main() {
                  << recursiveResult
                  << ", comparisons: "
                  << recursiveComparisons << endl;
+
+              cout << "  Linear result: index "
+                  << linearResult
+                  << ", comparisons: "
+                  << linearComparisons << endl;
 
             cout << endl;
         }

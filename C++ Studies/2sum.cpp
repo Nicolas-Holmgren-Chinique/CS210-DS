@@ -30,16 +30,17 @@ vector<int> twoSum(const vector<int>& nums, int target);
 vector<int> twoSumBruteForce(const vector<int>& nums, int target);
 
 int main() {
-    vector<int> nums = {15, 4, 18, 8, 19, 22, 24, 59, 59, 20, 18, 12, 36, 42, 9};
+    
+    vector<int> nums = {1000000, 500000, -500000, 2000000};
 
     // Test 1: Hash Map
-    vector<int> results1 = twoSum(nums, 24);
+    vector<int> results1 = twoSum(nums, 500000);
     if (results1.size() == 2) {
         cout << "Hash Map found indices: [" << results1[0] << ", " << results1[1] << "]" << endl;  
     }
 
     // Test 2: Brute Force
-    vector<int> results2 = twoSumBruteForce(nums, 24);
+    vector<int> results2 = twoSumBruteForce(nums, 500000);
     if (results2.size() == 2) {
         cout << "Brute Force found indices: [" << results2[0] << ", " << results2[1] << "]" << endl;  
     }

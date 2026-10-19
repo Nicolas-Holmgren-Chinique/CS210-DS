@@ -1,0 +1,33 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "Build Monopoly with SFML",
+            "command": "C:/mingw64/bin/g++.exe",
+            "args": [
+                "-g",
+                "-std=c++17",
+                "${workspaceFolder}/monopoly.cpp",
+                "-o",
+                "${workspaceFolder}/monopoly.exe",
+                "-I${workspaceFolder}/SFML/include",
+                "-L${workspaceFolder}/SFML/lib",
+                "-lsfml-graphics",
+                "-lsfml-window",
+                "-lsfml-system"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Builds the isolated Monopoly project with SFML."
+        }
+    ]
+}
